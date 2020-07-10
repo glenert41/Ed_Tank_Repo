@@ -1,6 +1,6 @@
 from urllib import request as urlrequest
 
-PROXY_ADDRESS = '13.85.25.59:8080'
+PROXY_ADDRESS = '13.85.25.59:8080' #This is the "Random Address"
 url = "http://icanhazip.com"
 
 request = urlrequest.Request(url)
