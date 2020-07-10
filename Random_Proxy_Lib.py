@@ -32,6 +32,5 @@ class ScrapeProxies:
         
         return PROXY
 
-s = ScrapeProxies("https://sslproxies.org", 20) # max of 20 random proxies
-proxy = s.scrape()
+proxy = ScrapeProxies("https://sslproxies.org", 20).scrape() # max of 20 random proxies
 print(proxy)
