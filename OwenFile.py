@@ -3,7 +3,21 @@ import time
 # from ProxyLibrary import *
 from random_proxies import random_proxy
 
-print(random_proxy(use_cache=False))
+#driver = webdriver.Chrome("/Users/owenmckenney/Desktop/Ed_Tank_Repo/chromedriver")
+
+#"/Users/owenmckenney/Downloads/chromedriver"
+
+
+PROXY = str(random_proxy(use_cache=False))
+print(PROXY)
+
+
+options = webdriver.ChromeOptions()
+options.add_argument('--proxy-server=%s' % PROXY)
+
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.google.com")
+
 
 '''
 webdriver.DesiredCapabilities.CHROME['proxy'] = {
@@ -14,7 +28,9 @@ webdriver.DesiredCapabilities.CHROME['proxy'] = {
     "proxyType": "MANUAL",
 
 }
+'''
 
+'''
 driver = webdriver.Chrome("/Users/owenmckenney/Downloads/chromedriver")
 site = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
 
@@ -27,7 +43,5 @@ for x in range(1, 5):
     driver.refresh()
     time.sleep(1)
 
-
-# /Users/owenmckenney/Desktop/SoundcloudBot/venv/bin/python
-
 '''
+
