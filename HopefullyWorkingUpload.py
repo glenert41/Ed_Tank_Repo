@@ -1,15 +1,14 @@
 from selenium import webdriver
 import time
+import sys
 
 from pynput.keyboard import Key, Controller
 keyboard = Controller()
 
-from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
-req_proxy = RequestProxy()
-proxies = req_proxy.get_proxy_list()
 
 
-PROXY = proxies[0].get_address()
+
+
 
 '''
 webdriver.DesiredCapabilities.CHROME['proxy']={
