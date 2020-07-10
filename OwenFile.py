@@ -7,19 +7,19 @@ from random_proxies import random_proxy
 
 #"/Users/owenmckenney/Downloads/chromedriver"
 
+#PROXY = str(random_proxy(use_cache=False))
+#print(PROXY)
 
-PROXY = str(random_proxy(use_cache=False))
-print(PROXY)
+PROXY = "178.63.41.235:9999"
 
-
+'''
 options = webdriver.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 
 driver = webdriver.Chrome(options=options)
 driver.get("https://www.google.com")
-
-
 '''
+
 webdriver.DesiredCapabilities.CHROME['proxy'] = {
     "httpProxy": PROXY,
     "ftpProxy": PROXY,
@@ -28,9 +28,8 @@ webdriver.DesiredCapabilities.CHROME['proxy'] = {
     "proxyType": "MANUAL",
 
 }
-'''
 
-'''
+
 driver = webdriver.Chrome("/Users/owenmckenney/Downloads/chromedriver")
 site = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
 
@@ -43,5 +42,5 @@ for x in range(1, 5):
     driver.refresh()
     time.sleep(1)
 
-'''
+
 
