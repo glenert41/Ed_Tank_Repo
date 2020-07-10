@@ -1,21 +1,23 @@
 from selenium import webdriver
 import time
-#from ProxyLibrary import *
 
-'''
-r = Random_Proxy()
-PROXY = r.Proxy_Request(url="https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank", request_type="get")
+from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
+req_proxy = RequestProxy() #you may get different number of proxy when  you run this at each time
+proxies = req_proxy.get_proxy_list() #this will create proxy list
 
 
-webdriver.DesiredCapabilities.CHROME['proxy'] = {
-    "httpProxy": PROXY,
-    "ftpProxy": PROXY,
-    "sslProxy": PROXY,
+PROXY = proxies[0].get_address()
 
-    "proxyType": "MANUAL",
+
+webdriver.DesiredCapabilities.CHROME['proxy']={
+    "httpProxy":PROXY,
+    "ftpProxy":PROXY,
+    "sslProxy":PROXY,
+
+"proxyType":"MANUAL",
 
 }
-'''
+
 
 driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
 site = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
