@@ -11,13 +11,13 @@ from random_proxies import random_proxy
 PROXY = str(random_proxy(use_cache=False))
 print(PROXY)
 
-
+'''
 options = webdriver.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 
 driver = webdriver.Chrome(options=options)
 driver.get("https://www.google.com")
-
+'''
 
 '''
 webdriver.DesiredCapabilities.CHROME['proxy'] = {
