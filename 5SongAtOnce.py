@@ -4,6 +4,7 @@ from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
 
+
 #list of random user agents, and chooses a random one
 h1 = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246"}
 h2 = {"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36"}
@@ -31,11 +32,16 @@ for x in range(1, 120):
     #Applies the changed user agent
     driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=opts)
 
-    #redefines the Xpaths for the buttons
-    SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
+
+
+    # redefines the Xpaths for the buttons
     low_play_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
 
+
     #Opens the Window, Plays, Closes the Window, and prints the user agent
+
+    SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
+
     time.sleep(2)
     low_play_btn.click()
     time.sleep(30)
