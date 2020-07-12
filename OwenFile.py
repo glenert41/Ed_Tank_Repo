@@ -1,16 +1,18 @@
 from selenium import webdriver
 import time
-# from ProxyLibrary import *
-from random_proxies import random_proxy
+from Random_Proxy_Lib import *
+from fake_useragent import UserAgent
 
 #driver = webdriver.Chrome("/Users/owenmckenney/Desktop/Ed_Tank_Repo/chromedriver")
 
 #"/Users/owenmckenney/Downloads/chromedriver"
 
-#PROXY = str(random_proxy(use_cache=False))
-#print(PROXY)
+ua = UserAgent()
 
-PROXY = "178.63.41.235:9999"
+
+#PROXY = ScrapeProxies("https://sslproxies.org", 20).scrape()
+
+#PROXY = "138.68.161.14:3128"
 
 '''
 options = webdriver.ChromeOptions()
@@ -29,14 +31,19 @@ webdriver.DesiredCapabilities.CHROME['proxy'] = {
 
 }
 
-
 driver = webdriver.Chrome("/Users/owenmckenney/Downloads/chromedriver")
 site = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
 
 for x in range(1, 5):
 
+    #PROXY = ScrapeProxies("https://sslproxies.org", 20).scrape()
     play_btn = driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a')
-    time.sleep(1)
+    time.sleep(5)
+    #try:
+        #play_btn.click()
+    #except:
+        #time.sleep(5)
+        #play_btn.click()
     play_btn.click()
     time.sleep(5)
     driver.refresh()
