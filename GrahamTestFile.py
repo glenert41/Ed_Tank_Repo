@@ -6,10 +6,6 @@ import time
 from selenium.webdriver.chrome.options import Options
 
 
-driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
-
-
-
 def SoManyNights():
     SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
     low_play_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
@@ -34,7 +30,20 @@ def PlayandStop():
     low_pause_btn.click()
     time.sleep(1)
 
+def CloseAllWindows():
+    driver.quit()
 
-SoManyNights()
-NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
-PlayandStop()
+
+for x in range (1,3):
+    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
+    SoManyNights()
+
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
+    PlayandStop()
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-jayv2')
+
+    PlayandStop()
+
+    CloseAllWindows()
+
+    time.sleep(2)
