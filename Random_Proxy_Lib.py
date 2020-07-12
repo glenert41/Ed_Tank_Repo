@@ -1,41 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
-import random
+from random import choice
 
-# https://hidemy.name/en/proxy-list/?country=US&maxtime=1000&type=h&anon=234#list
+def generate_proxy():
+    response = requests.get("https://sslproxies.org/")
+    soup = BeautifulSoup(response.content, 'html5lib')
+    proxy = {'https': choice(list(map(lambda x: x[0] + ':' + x[1], list(zip(map(lambda x: x.text,
+            soup.findAll('td')[::8]), map(lambda x: x.text, soup.findAll('td')[1::8]))))))}
+    return proxy
 
-def generate_proxy(url, proxy_amount):
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
-
-    if url == "https://sslproxies.org":
-        proxy_list_raw = soup.find_all('td')
-        c = 0
-        proxy_list = []
-
-        while c < proxy_amount * 8:
-            proxy_list.append(str(proxy_list_raw[c])[4:len(proxy_list_raw[c]) - 6])
-            proxy_list.append(str(proxy_list_raw[c + 1])[4:len(proxy_list_raw[c + 1]) - 6])
-            c = c + 8
-
-        # print(proxy_list)
-
-        rand = random.randint(0, (proxy_amount * 2) - 1)
-        if rand % 2 == 1:
-            rand = rand - 1
-        PROXY = str(proxy_list[rand] + ":" + proxy_list[rand + 1])
-
-        return PROXY
-
-    # if self.url == "https://hidemy.name/en/proxy-list/?country=US&maxtime=1000&type=h&anon=234#list":
-
-    # print(soup.find_all('table'))
-
-    else:
-        return "Invalid URL"
-
-
-def scrape(request_method, url, **kwargs):
+def check_proxy(request_method, url, **kwargs):
     while True:
         try:
             proxy = generate_proxy()
@@ -46,12 +20,9 @@ def scrape(request_method, url, **kwargs):
             print("Connection error")
             pass
 
-    return response
+    return proxy.get("https")
 
-        # works on https://sslproxies.org
-
-
-# or https://hidemy.name/en/proxy-list/?country=US&maxtime=1000&type=h&anon=234#list
-
-proxy = generate_proxy("https://sslproxies.org", 20)  # max of 20 random proxies
-print(scrape('get','https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank'))
+# works on https://sslproxies.org
+generate_proxy()
+proxy = check_proxy('get','https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank')
+print(proxy)
