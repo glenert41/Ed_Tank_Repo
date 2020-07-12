@@ -10,7 +10,7 @@ def SoManyNights():
     SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
     low_play_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
     low_play_btn.click()
-    time.sleep(10)
+    time.sleep(6)
     low_pause_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
     low_pause_btn.click()
     time.sleep(1)
@@ -25,7 +25,7 @@ def NewTab(url):
 def PlayandStop():
     high_play_btn = driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a')
     high_play_btn.click()
-    time.sleep(10)
+    time.sleep(6)
     low_pause_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
     low_pause_btn.click()
     time.sleep(1)
@@ -41,7 +41,10 @@ for x in range (1,3):
     NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
     PlayandStop()
     NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-jayv2')
-
+    PlayandStop()
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-riptessa')
+    PlayandStop()
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/free-madison-rnw-ed')
     PlayandStop()
 
     CloseAllWindows()
