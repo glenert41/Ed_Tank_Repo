@@ -1,19 +1,15 @@
 from selenium import webdriver
 import time
+import keyboard
 
-driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
-counter = 0
 
-for x in range(1, 5):
 
+for x in range(1, 10):
+    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
     SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
+    low_play_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
 
-    play_btn = driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a')
-
-    time.sleep(5)
-    play_btn.click()
-    time.sleep(5)
+    time.sleep(2)
+    low_play_btn.click()
+    time.sleep(2)
     driver.close()
-    time.sleep(1)
-    counter = counter + 1
-    print(counter)
