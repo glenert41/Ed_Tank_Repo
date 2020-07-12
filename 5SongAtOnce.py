@@ -34,7 +34,7 @@ def CloseAllWindows():
     driver.quit()
 
 
-for x in range (1,3):
+for x in range (1,120):
     driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
     SoManyNights()
 
