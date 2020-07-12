@@ -30,6 +30,10 @@ for x in range(1, 5):
 time.sleep(5)
 play_btn.click()
 time.sleep(5)
+driver.close()
+
+
+'''
 driver.refresh()
 time.sleep(5)
 keyboard.press(Key.space)
@@ -37,4 +41,4 @@ time.sleep(1)
 keyboard.release(Key.space)
 time.sleep(5)
 driver.refresh()
-
+'''
