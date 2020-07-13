@@ -37,8 +37,13 @@ def CloseAllWindows():
 
 
 for x in range (1,120):
+
+    #Option to run headless
     #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=chrome_options)
+
+    #Option to run with head
     driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
+
     SoManyNights()
 
     NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
