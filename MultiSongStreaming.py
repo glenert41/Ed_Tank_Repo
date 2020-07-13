@@ -42,10 +42,10 @@ def CloseAllWindows():
 for x in range (1,120):
 
     #Option to run headless
-    #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=chrome_options)
+    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=chrome_options)
 
     #Option to run with head
-    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
+    #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
 
     SoManyNights()
 
@@ -64,4 +64,5 @@ for x in range (1,120):
 
     CloseAllWindows()
 
+    print(x)
     time.sleep(1)
