@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.chrome.options import Options
+from datetime import datetime
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -38,10 +39,6 @@ def PlayandStop():
 def CloseAllWindows():
     driver.quit()
 
-<<<<<<< HEAD:5SongAtOnce.py
-for x in range (1,3):
-    driver = webdriver.Chrome("/Users/owenmckeney/Downloads/chromedriver")
-=======
 
 for x in range (1,120):
 
@@ -51,7 +48,6 @@ for x in range (1,120):
     #Option to run with head
     #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
 
->>>>>>> origin/master:MultiSongStreaming.py
     SoManyNights()
 
     NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
@@ -69,5 +65,8 @@ for x in range (1,120):
 
     CloseAllWindows()
 
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print("Current Time =", current_time)
     print(x)
     time.sleep(1)
