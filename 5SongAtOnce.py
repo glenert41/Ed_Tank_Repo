@@ -33,9 +33,8 @@ def PlayandStop():
 def CloseAllWindows():
     driver.quit()
 
-
 for x in range (1,3):
-    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
+    driver = webdriver.Chrome("/Users/owenmckeney/Downloads/chromedriver")
     SoManyNights()
 
     NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
