@@ -8,11 +8,14 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 
+SongDuration = 3
+
+
 def SoManyNights():
-    SoManyNights = driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
+    driver.get("https://soundcloud.com/eddison-duolo-546732382/so-many-nights-ed-tank")
     high_play_btn = driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a')
     high_play_btn.click()
-    time.sleep(3)
+    time.sleep(SongDuration)
     low_pause_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
     low_pause_btn.click()
     time.sleep(1)
@@ -27,7 +30,7 @@ def NewTab(url):
 def PlayandStop():
     high_play_btn = driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a')
     high_play_btn.click()
-    time.sleep(3)
+    time.sleep(SongDuration)
     low_pause_btn = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div[3]/button[2]')
     low_pause_btn.click()
 
@@ -61,4 +64,4 @@ for x in range (1,120):
 
     CloseAllWindows()
 
-    time.sleep(2)
+    time.sleep(1)
