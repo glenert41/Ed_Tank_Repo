@@ -2,6 +2,9 @@ import requests
 import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
+from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime
@@ -43,25 +46,26 @@ def CloseAllWindows():
 for x in range (1,120):
 
     #Option to run headless
-    driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=chrome_options)
+    #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen", options=chrome_options)
 
     #Option to run with head
     #driver = webdriver.Chrome("/Users/grahamlenert/Downloads/chromedriverowen")
 
-    SoManyNights()
+    driver = webdriver.Chrome(ChromeDriverManager().install())
 
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-zay2x-fullclip')
+    #SoManyNights()
+
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/landr-yo-vibe-2-0-lil-pacco')
     PlayandStop()
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-ft-jayv2')
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/pacco-434-mafia-balanced')
     PlayandStop()
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-riptessa')
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/landr-murda-pacco-2-8-21')
     PlayandStop()
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/free-madison-rnw-ed')
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/landr-intro-song-pacco')
     PlayandStop()
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/rnw-ed-next-up')
+    NewTab('https://soundcloud.com/eddison-duolo-546732382/lil-pacco-dont-go-balanced')
     PlayandStop()
-    NewTab('https://soundcloud.com/eddison-duolo-546732382/ed-mama-is-proud-of-me')
-    PlayandStop()
+
 
     CloseAllWindows()
 
