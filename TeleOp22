@@ -101,20 +101,22 @@ public class TeleOp2022 extends LinearOpMode {
         telemetry.addData("Gamepad1: Press X for Blue, B for Red", "");
         telemetry.update();
 
+        /*
         while (!gamepad1.x && !gamepad1.b) {
+
         }
 
         if(gamepad1.x){
-            carouselPower = -.75;
+            carouselPower = -1;
             pattern = RevBlinkinLedDriver.BlinkinPattern.BLUE;
             robot.blinkinLedDriver.setPattern(pattern);
         }
         if(gamepad1.b){
-            carouselPower = .75;
+            carouselPower = 1;
             pattern = RevBlinkinLedDriver.BlinkinPattern.RED;
             robot.blinkinLedDriver.setPattern(pattern);
         }
-
+        */
         waitForStart();
 
         // run until the end of the match (driver presses STOP)
@@ -122,6 +124,8 @@ public class TeleOp2022 extends LinearOpMode {
 
             pattern = RevBlinkinLedDriver.BlinkinPattern.HOT_PINK;
             robot.blinkinLedDriver.setPattern(pattern);
+
+
 
             // to grab heading from robot
             //robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES)
@@ -289,7 +293,9 @@ public class TeleOp2022 extends LinearOpMode {
             }
 
             if(gamepad2.y){
-                robot.carouselMotor.setPower(carouselPower);
+                robot.carouselMotor.setPower(-1);
+                //robot.carouselMotor.setPower(carouselPower);
+
                 pattern = RevBlinkinLedDriver.BlinkinPattern.RAINBOW_OCEAN_PALETTE;
                 robot.blinkinLedDriver.setPattern(pattern);
             }
