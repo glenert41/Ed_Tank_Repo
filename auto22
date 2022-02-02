@@ -344,7 +344,7 @@ public class Auto2022 extends LinearOpMode {
                 robot.driveForwardUseEncoder(.5, robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES), 75); //was 75 pre ziptie
                 robot.strafeLeft(.5, robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES), 500);
                 robot.rotateToHeading(0, -150, 1250); //1250 safe //150 degrees clears obstacle //was 155 degrees
-                robot.driveBackwardUseEncoder(.5, robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES), 650 + placeHeightAdjust); //was 625
+                robot.driveBackwardUseEncoder(.5, robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES), 700 + placeHeightAdjust); //was 650
 
 
                 //PLACE
