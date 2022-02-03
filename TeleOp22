@@ -293,7 +293,7 @@ public class TeleOp2022 extends LinearOpMode {
             }
 
             if(gamepad2.y){
-                robot.carouselMotor.setPower(-1);
+                robot.carouselMotor.setPower(-.2);
                 //robot.carouselMotor.setPower(carouselPower);
 
                 pattern = RevBlinkinLedDriver.BlinkinPattern.RAINBOW_OCEAN_PALETTE;
