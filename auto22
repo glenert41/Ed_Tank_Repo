@@ -119,7 +119,9 @@ public class Auto2022 extends LinearOpMode {
         });
 
 
-
+        int TOPHEIGHT = 4750/2; //4750 for 40
+        int MIDHEIGHT = 2500/2; //2500 for 40
+        int LOWHEIGHT = 0;
 
 
 
@@ -275,11 +277,11 @@ public class Auto2022 extends LinearOpMode {
                 //PLACE
                 robot.lowerIntake();
                 if (placeHeight == 3) {
-                    robot.moveLiftMotor(4750, .75);
+                    robot.moveLiftMotor(TOPHEIGHT, .75);
                 } else if (placeHeight == 2) {
-                    robot.moveLiftMotor(2500, .75);
+                    robot.moveLiftMotor(MIDHEIGHT, .75);
                 } else if (placeHeight == 1) {
-                    robot.moveLiftMotor(0, .75);
+                    robot.moveLiftMotor(LOWHEIGHT, .75);
                 } else {
                 }
                 robot.dump();
@@ -352,15 +354,15 @@ public class Auto2022 extends LinearOpMode {
                 telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                 telemetry.update();
                 if (placeHeight == 3) {
-                    robot.moveLiftMotor(4750, .75);
+                    robot.moveLiftMotor(TOPHEIGHT, .75);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else if (placeHeight == 2) {
-                    robot.moveLiftMotor(2500, .75);
+                    robot.moveLiftMotor(MIDHEIGHT, .75);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else if (placeHeight == 1) {
-                    robot.moveLiftMotor(0, .75);
+                    robot.moveLiftMotor(LOWHEIGHT, .75);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else {
@@ -413,11 +415,11 @@ public class Auto2022 extends LinearOpMode {
                 //PLACE
                 robot.lowerIntake();
                 if (placeHeight == 3) {
-                    robot.moveLiftMotor(4750, .75);
+                robot.moveLiftMotor(TOPHEIGHT, .75);
                 } else if (placeHeight == 2) {
-                    robot.moveLiftMotor(2500, .75);
+                    robot.moveLiftMotor(MIDHEIGHT, .75);
                 } else if (placeHeight == 1) {
-                    robot.moveLiftMotor(0, .75);
+                    robot.moveLiftMotor(LOWHEIGHT, .75);
                 } else {
                 }
                 robot.dump();
@@ -458,15 +460,15 @@ public class Auto2022 extends LinearOpMode {
                 telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                 telemetry.update();
                 if (placeHeight == 3) {
-                    robot.moveLiftMotor(4750, 1);
+                robot.moveLiftMotor(TOPHEIGHT, 1);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else if (placeHeight == 2) {
-                    robot.moveLiftMotor(2500, 1);
+                    robot.moveLiftMotor(MIDHEIGHT, 1);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else if (placeHeight == 1) {
-                    robot.moveLiftMotor(0, 1);
+                    robot.moveLiftMotor(LOWHEIGHT, 1);
                     telemetry.addData("ticks: ", robot.liftMotor.getCurrentPosition());
                     telemetry.update();
                 } else {
