@@ -336,7 +336,18 @@ public class TeleOp2022 extends LinearOpMode {
                 robot.spintakeMotor.setPower(0);
             }
 
-            //spintake items in
+            //spitake in items
+            if(gamepad2.dpad_left){
+                robot.spintakeMotor.setPower(-.75);
+                pattern = RevBlinkinLedDriver.BlinkinPattern.GREEN;
+                robot.blinkinLedDriver.setPattern(pattern);
+                while(gamepad2.dpad_down){
+
+                }
+                robot.spintakeMotor.setPower(0);
+            }
+
+            //spintake items in toggle
             if(gamepad2.dpad_up && spintakeMotorState == 0){
                     spintakeMotorState = 1;
                     robot.spintakeMotor.setPower(-.75);
