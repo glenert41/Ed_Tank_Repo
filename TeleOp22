@@ -230,7 +230,7 @@ public class TeleOp2022 extends LinearOpMode {
             if((liftMotorMovingDown == true) && robot.liftMotor.getCurrentPosition() < 0){
                 robot.liftMotor.setPower(0);
             }
-            if((liftMotorMovingUp == true) && robot.liftMotor.getCurrentPosition() > 4500){
+            if((liftMotorMovingUp == true) && robot.liftMotor.getCurrentPosition() > 4500/2){
                 robot.liftMotor.setPower(0);
             }
 
