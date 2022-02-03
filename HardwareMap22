@@ -68,6 +68,7 @@ public class HardwareMap2022
     public CRServo intakeServo2 = null;
 
     public Servo dropServo = null;
+    public Servo capServo = null;
 
 
     public DcMotor carouselMotor = null;
@@ -141,6 +142,7 @@ public class HardwareMap2022
         intakeServo2 = hwMap.get(CRServo.class,"IS2");
 
         dropServo = hwMap.get(Servo.class,"DS");
+        capServo = hwMap.get(Servo.class,"capS");
 
         carouselMotor = hwMap.get(DcMotor.class,"CML");
         //carouselServo = hwMap.get(CRServo.class,"CS"); 1
@@ -164,6 +166,7 @@ public class HardwareMap2022
         //Set Power and Position -----------------------------------------
 
         dropServo.setPosition(1);
+        capServo.setPosition(-1);
 
         //Set Modes -----------------------------------------
 
